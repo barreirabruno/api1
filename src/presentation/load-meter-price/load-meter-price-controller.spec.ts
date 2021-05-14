@@ -1,8 +1,5 @@
 import { HttpRequest, HttpResponse } from '../protocols/http'
-
-interface Controller {
-  handle: (httpRequest: HttpRequest) => HttpResponse
-}
+import { Controller } from '../protocols/controller'
 
 const success = (data: any): HttpResponse => ({
   statusCode: 200,
