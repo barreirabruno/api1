@@ -1,12 +1,25 @@
+/* eslint-disable @typescript-eslint/space-before-function-paren */
 import { HttpRequest, HttpResponse } from '../../protocols/http'
 import { success } from '../../helpers/httpHelper'
 import { Controller } from '../../protocols/controller'
+import { MeterPrice } from '../../../domain/usecases/meter-price'
 
 export class LoadMeterPriceController implements Controller {
-  handle (httpRequest: HttpRequest): HttpResponse {
-    return success({
-      district: 'any_district_name',
-      price: 'any_price'
-    })
+  private readonly meterPrice: MeterPrice
+
+  constructor(meterPrice: MeterPrice) {
+    this.meterPrice = meterPrice
+  }
+
+  async handle (httpRequest: HttpRequest): Promise<HttpResponse> {
+    try {
+      const meterPrice = await this.meterPrice.load()
+      return success(meterPrice)
+    } catch (error) {
+      return {
+        statusCode: 500,
+        body: error
+      }
+    }
   }
 }
