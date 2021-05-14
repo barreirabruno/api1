@@ -1,5 +1,5 @@
-import { HttpRequest, HttpResponse } from '../protocols/http'
-import { Controller } from '../protocols/controller'
+import { HttpResponse } from '../protocols/http'
+import { LoadMeterPriceController } from './load-meter-price-controller'
 
 const success = (data: any): HttpResponse => ({
   statusCode: 200,
@@ -9,12 +9,6 @@ const success = (data: any): HttpResponse => ({
 const meterPriceFromDatabase = {
   district: 'any_district_name',
   price: 'any_price'
-}
-
-class LoadMeterPriceController implements Controller {
-  handle (httpRequest: HttpRequest): HttpResponse {
-    return success(meterPriceFromDatabase)
-  }
 }
 
 describe('Load meters price controller', () => {
