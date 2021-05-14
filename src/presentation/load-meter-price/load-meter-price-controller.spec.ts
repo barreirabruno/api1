@@ -1,11 +1,4 @@
-interface HttpRequest {
-  body?: any
-}
-
-interface HttpResponse {
-  statusCode: number
-  body: any
-}
+import { HttpRequest, HttpResponse } from '../protocols/http'
 
 interface Controller {
   handle: (httpRequest: HttpRequest) => HttpResponse
