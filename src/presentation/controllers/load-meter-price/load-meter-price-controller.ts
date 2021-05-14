@@ -1,10 +1,6 @@
-import { HttpRequest, HttpResponse } from '../protocols/http'
-import { Controller } from '../protocols/controller'
-
-const success = (data: any): HttpResponse => ({
-  statusCode: 200,
-  body: data
-})
+import { HttpRequest, HttpResponse } from '../../protocols/http'
+import { success } from '../../helpers/httpHelper'
+import { Controller } from '../../protocols/controller'
 
 export class LoadMeterPriceController implements Controller {
   handle (httpRequest: HttpRequest): HttpResponse {
