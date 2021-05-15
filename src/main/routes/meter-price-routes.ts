@@ -1,11 +1,8 @@
+/* eslint-disable @typescript-eslint/no-misused-promises */
 import { Router } from 'express'
+import { adaptRoute } from '../adapters/express-route-adapters'
+import { makeLoadMeterPriceController } from '../factories/meter-price'
 
 export default (router: Router): void => {
-  router.get('/meter-price', (req, res) => {
-    res.json({
-      id: 'any_id',
-      district: 'any_district',
-      price: 'any_price'
-    })
-  })
+  router.get('/meter-price', adaptRoute(makeLoadMeterPriceController()))
 }
