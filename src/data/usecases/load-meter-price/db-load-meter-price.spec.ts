@@ -13,9 +13,29 @@ const makeMeterPriceRepository = (): LoadMeterPriceRepository => {
   return new LoadMeterPriceRepositoryStub()
 }
 
+interface SutTypes {
+  sut: DbMeterPrice
+  loadMeterPriceRepositoryStub: LoadMeterPriceRepository
+}
+
+const makeSut = (): SutTypes => {
+  const loadMeterPriceRepositoryStub = makeMeterPriceRepository()
+  const dbMeterPrice = new DbMeterPrice(loadMeterPriceRepositoryStub)
+  return {
+    sut: dbMeterPrice,
+    loadMeterPriceRepositoryStub: loadMeterPriceRepositoryStub
+  }
+}
+
 describe('DbMeterPrice usecases', () => {
+  test('Should call meter price repository', async () => {
+    const { sut, loadMeterPriceRepositoryStub } = makeSut()
+    const spyMeterPrice = jest.spyOn(loadMeterPriceRepositoryStub, 'loadMeterPrice')
+    await sut.load()
+    expect(spyMeterPrice).toHaveBeenCalled()
+  })
   test('Should return a meter price on success', async () => {
-    const sut = new DbMeterPrice(makeMeterPriceRepository())
+    const { sut } = makeSut()
     const loadMeterPrice = await sut.load()
     expect(loadMeterPrice).toEqual(mockMeterPrice())
   })
