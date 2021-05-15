@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/space-before-function-paren */
 import { HttpRequest, HttpResponse } from '../../protocols/http'
-import { success } from '../../helpers/httpHelper'
+import { success, serverError } from '../../helpers/httpHelper'
 import { Controller } from '../../protocols/controller'
 import { MeterPrice } from '../../../domain/usecases/meter-price'
 
@@ -16,10 +16,7 @@ export class LoadMeterPriceController implements Controller {
       const meterPrice = await this.meterPrice.load()
       return success(meterPrice)
     } catch (error) {
-      return {
-        statusCode: 500,
-        body: error
-      }
+      return serverError(error)
     }
   }
 }
