@@ -34,6 +34,12 @@ describe('DbMeterPrice usecases', () => {
     await sut.load()
     expect(spyMeterPrice).toHaveBeenCalled()
   })
+  test('Should throw if meter price repository throws', async () => {
+    const { sut, loadMeterPriceRepositoryStub } = makeSut()
+    jest.spyOn(loadMeterPriceRepositoryStub, 'loadMeterPrice').mockReturnValueOnce(new Promise((resolve, reject) => reject(new Error())))
+    const loadMeterPrice = sut.load()
+    await expect(loadMeterPrice).rejects.toThrow()
+  })
   test('Should return a meter price on success', async () => {
     const { sut } = makeSut()
     const loadMeterPrice = await sut.load()
