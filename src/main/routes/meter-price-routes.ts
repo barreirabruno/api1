@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-misused-promises */
 import { Router } from 'express'
 import { adaptRoute } from '../adapters/express-route-adapters'
 import { makeLoadMeterPriceController } from '../factories/meter-price'
