@@ -7,7 +7,7 @@ import { MeterPrice } from '../../../domain/usecases/meter-price'
 export class LoadMeterPriceController implements Controller {
   private readonly meterPrice: MeterPrice
 
-  constructor(meterPrice: MeterPrice) {
+  constructor (meterPrice: MeterPrice) {
     this.meterPrice = meterPrice
   }
 

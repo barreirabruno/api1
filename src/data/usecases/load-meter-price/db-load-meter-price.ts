@@ -6,7 +6,7 @@ import { LoadMeterPriceRepository } from '../../protocols/meter-price/load-meter
 export class DbMeterPrice implements MeterPrice {
   private readonly meterPriceRepository: LoadMeterPriceRepository
 
-  constructor(meterPriceRepository: LoadMeterPriceRepository) {
+  constructor (meterPriceRepository: LoadMeterPriceRepository) {
     this.meterPriceRepository = meterPriceRepository
   }
 
