@@ -13,9 +13,6 @@ export const MongoHelper = {
   },
 
   async addMeterPrice (): Promise<void> {
-    if (!this.client?.isConnected()) {
-      await this.connect(this.url)
-    }
     const collection = this.client.db().collection('meter-prices')
     collection.insertOne({
       district: 'any_location',
