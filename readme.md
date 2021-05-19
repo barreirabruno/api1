@@ -2,7 +2,7 @@
 
 ## API1
 
-Essa api faz parte do desafio backend da empresa In Gaia
+Essa api faz parte do desafio backend da empresa [In-Gaia](https://github.com/ingaia/backend-challenge)
 
 O objetivo dessa api é servir o preço do metro quadrado para o usuário.
 
@@ -90,3 +90,8 @@ E: Camada **main**
     - Esta camada depende da camada de apresentação.
     - O servidor web(Express) e as rotas são configurados nessa camada.
     - Esta camada implementa recursos necessários para que as rotas http funcionem.
+
+## Próximos passos
+
+ - Adicionar Swagger ao projeto
+ - Processos de CI/CD no Heroku
