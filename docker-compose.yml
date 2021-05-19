@@ -1,13 +1,5 @@
 version: "3"
 services:
-  mongo:
-    container_name: mongo-container-api1
-    image: mongo:4
-    restart: always
-    volumes:
-      - ./data:/data/db
-    ports:
-      - "27017:27017"
   api:
     container_name: in-gaia-teste-api1-container
     image: node:14
@@ -20,5 +12,3 @@ services:
     ports: 
       - "3333:3333"
       - "9222:9222"
-    links:
-      - mongo
