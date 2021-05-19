@@ -45,6 +45,10 @@ Comandos para finalizar a execução
   - **npm run stop**
     - Para a execução do container **in-gaia-teste-api1-container**, portanto, desliga a aplicação API1
 
+## Construção da aplicação
 
+A construção da api1 foi feita por camadas, conforme o diagrama abaixo: 
+
+[![alt text](./public/img/api1-arch-diagram.png "Veja o diagrama no draw.io")](https://drive.google.com/file/d/1zsaOih1rj_u8vJYxNeGPnNlu8J2ualaG/view?usp=sharing)
 
   
