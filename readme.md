@@ -71,29 +71,29 @@ A construção da api1 foi feita por camadas, conforme o diagrama abaixo:
 
 **Leitura do diagrama**
 
-A: Camada **presentation**
+ - A: Camada **presentation**
     - Depende da camada de domínio.
     - Essa camada executa um ou mais casos de uso.
     - Validações de dados podem ser implementadas nessa camada, para garantir boa execução dos casos de uso.
     - Nesta aplicação essa camada apresenta os dados através de uma rota http, do tipo get.
 
-B: Camada **domain**
+ - B: Camada **domain**
     - Esta camada não depende de nenhuma outra camada da aplicação.
     - Define o model __meter-price__
     - Define o caso de uso para carregar o preço do metro quadrado.
   
-C: Camada **data**
+ - C: Camada **data**
     - Esta camada depende das fontes de dados da aplicação.
     - Coordena os dados vindos de diferentes fontes de dados.
     - API1 tem uma fonte de dados, o MongoDB.
     - Esta camada utiliza o repositório do MongoDB.
 
-D: Camada **infra**
+ - D: Camada **infra**
     - Esta camada conhece bibliotecas externas, no caso, o drive do MongoDB.
     - Esta camada implementa os repositórios das fontes de dados, no caso, o MongoDB.
     - Outras bibliotecas, como por exemplo Axios, poderiam ficar nessa camada.
   
-E: Camada **main**
+ - E: Camada **main**
     - Esta camada depende da camada de apresentação.
     - O servidor web(Express) e as rotas são configurados nessa camada.
     - Esta camada implementa recursos necessários para que as rotas http funcionem.
