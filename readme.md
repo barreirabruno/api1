@@ -100,5 +100,6 @@ A construção da api1 foi feita por camadas, conforme o diagrama abaixo:
 
 ## Próximos passos
 
+ - Centralizar arquivos de teste(e relacionados, como mocks) em uma pasta de testes
  - Adicionar Swagger ao projeto
  - Processos de CI/CD no Heroku
