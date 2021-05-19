@@ -10,6 +10,17 @@ O objetivo dessa api é servir o preço do metro quadrado para o usuário.
 
 [meter-price](./requirements/meter-price.md)
 
+## Tecnologias utilizadas
+
+  - Typescript
+  - NodeJS
+  - Jest
+  - Supertest
+  - Express
+  - MongoDb
+  - Nodemon
+  - Docker
+
 ## Teste de unidade e testes de integração
 
 A API1 utiliza as seguintes ferramentas para testes
