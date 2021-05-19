@@ -20,6 +20,7 @@ O objetivo dessa api é servir o preço do metro quadrado para o usuário.
   - MongoDb
   - Nodemon
   - Docker
+  - Heroku
 
 ## Teste de unidade e testes de integração
 
@@ -55,6 +56,12 @@ Comandos para finalizar a execução
 
   - **npm run stop**
     - Para a execução do container **in-gaia-teste-api1-container**, portanto, desliga a aplicação API1
+
+## Postman
+
+O Postman pode ser utilizado para consumir a api em ambiente local e de produção.
+
+[Collections e environments](./postman)
 
 ## Construção da aplicação
 
